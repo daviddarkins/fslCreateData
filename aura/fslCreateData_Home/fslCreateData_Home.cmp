@@ -1,0 +1,208 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+	<div class="slds-page-header">
+  <div class="slds-media">
+    <div class="slds-media__body">
+      <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">FSL Demo Data</h1>
+    </div>
+  </div>
+    </div>
+<article>
+<div>
+    <div>
+      <div class="slds-modal__content slds-welcome-mat__content slds-grid" id="welcome-mat-14-content">
+        <div class="slds-welcome-mat__info slds-size_4-of-12" style="height:800px;">
+          <div class="slds-welcome-mat__info-content">
+            <h2 id="welcome-mat-14-label" class="slds-welcome-mat__info-title">Create FSL Data!</h2>
+            <div class="slds-welcome-mat__info-description slds-text-longform">
+              <p>This app will create 20 Accounts for Pizza resturants/locations within the New York area.<br/><br/> Pressing the create button will start a Flow which will create the following (data model below)</p>
+              <ul class="slds-list_dotted">
+				  <li>1 Work Order per Account (where the name contains FSL)</li>
+				  <li>3 Work Order Line Items are assigned to the Work Order</li>
+				  <li>Work Types are set to each Work Order Line Item</li>
+				  <li>1 Service Appointment is assigned to the Work Order</li>
+				  <li><b>All variables can be configured within the Flow</b></li>
+				  <li><b>The Flow will also make the same data for all the Accounts for Today+1 and Today+2</b></li>
+				  <li>After pressing create you will have 60 Work Orders (each with 3 WOLI and 1 Service Appointment) - 20 Work Orders are created for today, 20 for Today+1 and 20 for Today+2</li>
+			  </ul>
+              <div class="slds-media__figure">
+              <img src="/resource/fslCreateData_sampledata/fslsampledata/fslcreatedata_wo1.png"/>
+          </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-welcome-mat__tiles slds-size_8-of-12 slds-p-around_medium" style="height:800px;">
+        	<h2 class="slds-align_absolute-center">Getting Started</h2>
+        <!-- Create Accounts -->
+          <a href="/resource/fslCreateData_sampledata/" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+                <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                	<lightning:icon iconName="standard:account" size="medium"/>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Upload the New York sample Account Data</h3>
+              <p class="slds-welcome-mat__tile-description">Click to download the sample CSV. Upload accounts using dataloader</p>
+            </div>
+          </a>
+          <!-- Create WOLI RTs -->
+          <a href="javascript:void(0);" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+                <span class="slds-icon_container slds-icon-utility-upload">
+                	<lightning:icon iconName="standard:work_order_item" size="medium"/>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Create 3 Work Order Line Items Record Types</h3>
+              <p class="slds-welcome-mat__tile-description">Go to setup and create 3 WOLI Record Types - log the ids of the Record Types</p>
+              <p class="slds-welcome-mat__tile-description">These Work Order Line Items will be attached to the Work Order that is created within the Flow</p>
+            </div>
+          </a>
+          <!-- Create FSL Data -->
+          <a href="javascript:void(0);" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+                <span class="slds-icon_container slds-icon-utility-call">
+                	<lightning:icon iconName="standard:service_territory" size="medium"/>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Create your Territories and Resources</h3>
+              <p class="slds-welcome-mat__tile-description">Use the Field Service Settings Guided Set Up to set up New York Territorities and Resources </p>
+            </div>
+          </a>
+
+          <!-- Create Work Types -->
+          <a href="javascript:void(0);" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+                <span class="slds-icon_container slds-icon-utility-magicwand">
+                	<lightning:icon iconName="standard:work_type" size="medium"/>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Create 3 Work Types for WOLI</h3>
+              <p class="slds-welcome-mat__tile-description">Use the Field Service Settings to create 3 Work Types  - log the ids.</p>
+              <p class="slds-welcome-mat__tile-description">Work Types will be assigned to your WOLIs that are created as part of the Flow. <b>Ensure that Auto-Create Service Appointment is UNCHECKED</b></p>
+            </div>
+          </a>
+          <!-- Update Labels -->
+          <a href="/lightning/setup/ExternalStrings/home" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+                <span class="slds-icon_container slds-icon-utility-magicwand">
+                	<lightning:icon iconName="standard:topic2" size="medium"/>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Update the Custom Labels</h3>
+              <p class="slds-welcome-mat__tile-description">Custom labels drive the Flow that is creating all of the FSL data.</p>
+              <p class="slds-welcome-mat__tile-description">Click the link to update (all are stored under the fslCreateData category). You can use the table below to verify your custom labels</p>
+            </div>
+          </a>
+          <!-- Run -->
+          <a href="/flow/fslCreateData_Flow" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+               		
+                <span class="slds-icon_container slds-icon-utility-knowledge_base">
+                	<button class="slds-button slds-button_brand">
+                	<a href="/flow/fslCreateData_Flow" target="blank">
+            			Create Data
+                  </a></button>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Press The Create Button</h3>
+              <p class="slds-welcome-mat__tile-description">Press the create button to create Work Orders with 3 Work Order Line Items based on the varaibles below.</p>
+              <p class="slds-welcome-mat__tile-description">Add a Custom Button to your Work Order or Service Appointment list views to run the Flow from there</p>
+              </div>
+          </a>
+          <!-- Advanced -->
+          <a class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+              <div class="slds-welcome-mat__tile-icon-container">
+                <span class="slds-icon_container slds-icon-utility-magicwand">
+                	<lightning:icon iconName="standard:connected_apps" size="medium"/>
+                </span>
+              </div>
+            </div>
+            <div class="slds-media__body slds-border_left slds-p-around_small">
+              <h3 class="slds-welcome-mat__tile-title">Advanced</h3>
+              <p class="slds-welcome-mat__tile-description">Update the Flows to change how data is created</p>
+              <p class="slds-welcome-mat__tile-description">Flow Name = fslcreatedata_Flow + fslcreatedata_Loop (this flow creates the data for Today+1 and Today+2)</p>
+             
+            </div>
+          </a>
+           <p class="slds-welcome-mat__tile-description">Delete all Work Orders and child records
+              <code>List 	&lt;WorkOrder&gt; SobjLst = [select id from WorkOrder];
+				delete SobjLst;</code></p>
+        </div>
+      </div>
+    </div>
+</div>
+    <br/><br/>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer" width="100px">
+        <thead>
+    <tr class="slds-text-title_caps">
+      <th scope="col">
+        <div class="slds-truncate" title="Input">Input Variable</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Value">Value</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr>
+            <th>Accout Filter (will select to create WOs for accounts which contain this name) <br/><b>Flow can be updated to change the filter of which accounts are selected</b></th>
+            <td>{!$Label.c.fslCreateData_AccFilter}</td>
+        </tr>
+        <tr>
+            <th>WOLI Record Type ID - 1</th>
+            <td>{!$Label.c.fslCreateData_WOLIRecTyprId_1}</td>
+        </tr>
+        <tr>
+            <th>WOLI Record Type ID - 2</th>
+            <td>{!$Label.c.fslCreateData_WOLIRecTyprId_2}</td>
+        </tr>
+        <tr>
+            <th>WOLI Record Type ID - 3</th>
+            <td>{!$Label.c.fslCreateData_WOLIRecTyprId_3}</td>
+        </tr>
+        <tr>
+            <th>WOLI Subject - 1</th>
+            <td>{!$Label.c.fslCreateData_WOLISubject_1}</td>
+        </tr>
+        <tr>
+            <th>WOLI Subject - 2</th>
+            <td>{!$Label.c.fslCreateData_WOLISubject_2}</td>
+        </tr>
+        <tr>
+            <th>WOLI Subject - 3</th>
+            <td>{!$Label.c.fslCreateData_WOLISubject_3}</td>
+        </tr>
+        <tr>
+            <th>Work Type ID - 1</th>
+            <td>{!$Label.c.fslCreateData_WTRecTyprId_1}</td>
+        </tr>
+        <tr>
+            <th>Work Type ID - 2</th>
+            <td>{!$Label.c.fslCreateData_WTRecTyprId_2}</td>
+        </tr>
+        <tr>
+            <th>Work Type ID - 3</th>
+            <td>{!$Label.c.fslCreateData_WTRecTyprId_3}</td>
+        </tr>
+      </tbody>
+    </table>
+
+                  </article>
+</aura:component>
