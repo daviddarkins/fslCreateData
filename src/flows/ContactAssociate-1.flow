@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dynamicChoiceSets>
+        <name>showcontacts</name>
+        <dataType>String</dataType>
+        <displayField>Email</displayField>
+        <filters>
+            <field>AccountId</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>zzzzzz</stringValue>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </dynamicChoiceSets>
+    <interviewLabel>ContactAssociate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ContactAssociate</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>associate</name>
+        <label>Association</label>
+        <locationX>298</locationX>
+        <locationY>226</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>help</name>
+            <fieldText>Who is the customer we are talking to</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>choice</name>
+            <choiceReferences>showcontacts</choiceReferences>
+            <dataType>String</dataType>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>associate</startElementReference>
+</Flow>

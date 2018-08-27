@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>FSL_TaskDemo2 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FSL_TaskDemo2</label>
+    <processType>FieldServiceMobile</processType>
+    <recordCreates>
+        <name>Create_Account</name>
+        <label>Create Account</label>
+        <locationX>506</locationX>
+        <locationY>50</locationY>
+        <inputAssignments>
+            <field>AnnualRevenue</field>
+            <value>
+                <elementReference>Turnover</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Account_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Phone</field>
+            <value>
+                <elementReference>num</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordCreates>
+    <screens>
+        <name>HW</name>
+        <label>HW</label>
+        <locationX>110</locationX>
+        <locationY>35</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>step2</targetReference>
+        </connector>
+        <fields>
+            <name>OutputDemo</name>
+            <fieldText>Outputs
+
+{!$Flow.CurrentDate}
+
+{!MyVar}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Help</name>
+            <fieldText>Press next to create a new Account</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <helpText>do stuff</helpText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>step2</name>
+        <label>Details</label>
+        <locationX>290</locationX>
+        <locationY>47</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Account</targetReference>
+        </connector>
+        <fields>
+            <name>Account_Name</name>
+            <dataType>String</dataType>
+            <fieldText>Account Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>num</name>
+            <dataType>Number</dataType>
+            <fieldText>Office Telephone</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Turnover</name>
+            <dataType>Currency</dataType>
+            <fieldText>Turnover</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>HW</startElementReference>
+    <variables>
+        <name>MyVar</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

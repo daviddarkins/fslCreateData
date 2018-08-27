@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>FSL_TestFlow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FSL_TestFlow</label>
+    <processType>FieldServiceMobile</processType>
+    <screens>
+        <name>Welcome_Screen</name>
+        <label>Welcome Screen</label>
+        <locationX>77</locationX>
+        <locationY>132</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>welcomemsg</name>
+            <fieldText>Hi,
+
+Please start the survey!!</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Welcome_Screen</startElementReference>
+</Flow>

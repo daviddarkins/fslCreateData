@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>FSL_TaskDemo {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FSL_TaskDemo</label>
+    <processType>FieldServiceMobile</processType>
+    <recordCreates>
+        <name>NewTask</name>
+        <label>NewTask</label>
+        <locationX>190</locationX>
+        <locationY>169</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FSL__Event_Type__c</field>
+            <value>
+                <stringValue>Service Appointment</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Mobile App</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <startElementReference>NewTask</startElementReference>
+</Flow>
