@@ -8,7 +8,7 @@ Pressing the create button will start a Flow which will create the following
 * 3 Work Order Line Items are assigned to the Work Order
 * Work Types are set to each Work Order Line Item
 * 1 Service Appointment is assigned to the Work Order
-* All variables can be configured within the Flow
+* **All variables can be configured within the Flow**
 * The Flow will also make the same data for all the Accounts for Today+1 and Today+2
 * After pressing create you will have 60 Work Orders (each with 3 WOLI and 1 Service Appointment) 
 	* 20 Work Orders are created with a start date of Today, 
