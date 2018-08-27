@@ -1,0 +1,6 @@
+NAME,STREET,CITY,STATE,POSTALCODE,COUNTRY,LATITUDE,LONGITUDE,ISACTIVE
+New York,,,,,,,,TRUE
+Brooklyn,100 Jay Street,Brooklyn,NY,11201,USA,40.702004,-73.987053,TRUE
+Queens/Long Island,828 South Oyster Bay Road,Hicksville,NY,11801,United States,40.76165,-73.501287,TRUE
+Manhattan,350 5th Avenue,New York,NY,10118,United States,40.748463,-73.985718,TRUE
+Upstate,100 N Washington Ave,Hartsdale,NY,10530-17513,USA,41.022284,-73.79698,TRUE
