@@ -11,9 +11,9 @@ Pressing the create button will start a Flow which will create the following
 * **All variables can be configured within the Flow**
 * The Flow will also make the same data for all the Accounts for Today+1 (e.g Tomorrow) and Today+2 (e.g 2 days time)
 * After pressing create you will have 60 Work Orders (each with 3 WOLI and 1 Service Appointment) 
-	** 20 Work Orders are created where Earliest Start Date = Today
-	** 20 Work Orders are created where Earliest Start Date = Today+1 (tomorrow)
-	** 20 Work Orders are created where Earliest Start Date = Today+2 (2 days time)
+	* 20 Work Orders are created where Earliest Start Date = Today 
+	* 20 Work Orders are created where Earliest Start Date = Today+1 (tomorrow)
+	* 20 Work Orders are created where Earliest Start Date = Today+2 (2 days time)
 
 <img src="https://github.com/daviddarkins/fslCreateData/blob/master/DATA/fslcreatedata_wo1.png"/>
 <!--
