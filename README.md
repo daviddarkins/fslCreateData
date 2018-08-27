@@ -17,4 +17,4 @@ Pressing the create button will start a Flow which will create the following
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
 
-# unmanaged package link prod https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX sandbox https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX
+## unmanaged package link prod https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX sandbox https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX
