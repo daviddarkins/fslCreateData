@@ -21,8 +21,14 @@
 				  <li>Work Types are set to each Work Order Line Item</li>
 				  <li>1 Service Appointment is assigned to the Work Order</li>
 				  <li><b>All variables can be configured within the Flow</b></li>
-				  <li><b>The Flow will also make the same data for all the Accounts for Today+1 and Today+2</b></li>
-				  <li>After pressing create you will have 60 Work Orders (each with 3 WOLI and 1 Service Appointment) - 20 Work Orders are created for today, 20 for Today+1 and 20 for Today+2</li>
+				  <li><b>The Flow will also make the same data for all the Accounts for Today+1 (e.g Tomorrow) and Today+2 (e.g 2 days time)</b></li>
+				  <li>After pressing create you will have 60 Work Orders (each with 3 WOLI and 1 Service Appointment)
+				  <ul class="slds-is-nested">
+				  	<li>20 Work Orders are created where Earliest Start Date = Today</li>
+				  	<li>20 Work Orders are created where Earliest Start Date = Today+1 (tomorrow)</li>
+				  	<li>20 Work Orders are created where Earliest Start Date = Today+2 (2 days time)</li>
+				  </ul>
+				  </li>
 			  </ul>
               <div class="slds-media__figure">
               <img src="/resource/fslCreateData_sampledata/fslsampledata/fslcreatedata_wo1.png"/>
@@ -43,7 +49,7 @@
             </div>
             <div class="slds-media__body slds-border_left slds-p-around_small">
               <h3 class="slds-welcome-mat__tile-title">Upload the New York sample Account Data</h3>
-              <p class="slds-welcome-mat__tile-description">Click to download the sample CSV. Upload accounts using dataloader</p>
+              <p class="slds-welcome-mat__tile-description">Click to download the FSLaccounts.csv sample data. Upload accounts using dataloader</p>
             </div>
           </a>
           <!-- Create WOLI RTs -->
@@ -62,7 +68,7 @@
             </div>
           </a>
           <!-- Create FSL Data -->
-          <a href="javascript:void(0);" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
+          <a href="/resource/fslCreateData_sampledata/" class="slds-box slds-box_link slds-box_x-small slds-media slds-welcome-mat__tile">
             <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
               <div class="slds-welcome-mat__tile-icon-container">
                 <span class="slds-icon_container slds-icon-utility-call">
@@ -72,7 +78,7 @@
             </div>
             <div class="slds-media__body slds-border_left slds-p-around_small">
               <h3 class="slds-welcome-mat__tile-title">Create your Territories and Resources</h3>
-              <p class="slds-welcome-mat__tile-description">Use the Field Service Settings Guided Set Up to set up New York Territorities and Resources </p>
+              <p class="slds-welcome-mat__tile-description">Use the Field Service Settings Guided Set Up to set up New York Territorities and Resources. Alternatively upload the FSLterritory.csv sample data found in the static resource. Upload territories using dataloader</p>
             </div>
           </a>
 
@@ -87,7 +93,7 @@
             </div>
             <div class="slds-media__body slds-border_left slds-p-around_small">
               <h3 class="slds-welcome-mat__tile-title">Create 3 Work Types for WOLI</h3>
-              <p class="slds-welcome-mat__tile-description">Use the Field Service Settings to create 3 Work Types  - log the ids.</p>
+              <p class="slds-welcome-mat__tile-description">Use the Field Service Settings to create 3 Work Types  - log the record ids (you would need to see this in the standard record view).</p>
               <p class="slds-welcome-mat__tile-description">Work Types will be assigned to your WOLIs that are created as part of the Flow. <b>Ensure that Auto-Create Service Appointment is UNCHECKED</b></p>
             </div>
           </a>
@@ -136,14 +142,13 @@
             </div>
             <div class="slds-media__body slds-border_left slds-p-around_small">
               <h3 class="slds-welcome-mat__tile-title">Advanced</h3>
-              <p class="slds-welcome-mat__tile-description">Update the Flows to change how data is created</p>
-              <p class="slds-welcome-mat__tile-description">Flow Name = fslcreatedata_Flow + fslcreatedata_Loop (this flow creates the data for Today+1 and Today+2)</p>
-             
+              <p class="slds-welcome-mat__tile-description">Update the Flows and Labels to change how data is created</p>
+              <p class="slds-welcome-mat__tile-description">Flow Name = fslcreatedata_Flow + fslcreatedata_Loop (this flow creates the data for Today+1 and Today+2)</p>     
             </div>
           </a>
-           <p class="slds-welcome-mat__tile-description">Delete all Work Orders and child records
+           <p class="slds-welcome-mat__tile-description">Delete all Work Orders and child records from dev console</p>
               <code>List 	&lt;WorkOrder&gt; SobjLst = [select id from WorkOrder];
-				delete SobjLst;</code></p>
+				delete SobjLst;</code>
         </div>
       </div>
     </div>

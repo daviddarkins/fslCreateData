@@ -23,5 +23,5 @@ Pressing the create button will start a Flow which will create the following
 </a> -->
 
 ## unmanaged package link 
-* Prod https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX 
-* Sandbox https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX
+* Prod https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pc 
+* Sandbox https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pc
