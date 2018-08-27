@@ -16,11 +16,11 @@ Pressing the create button will start a Flow which will create the following
 	* 20 are created with a start date of Today+2 (2 days time)
 
 <img src="https://github.com/daviddarkins/fslCreateData/blob/master/fslcreatedata_wo1.png"/>
-
+<!--
 <a href="https://githubsfdeploy.herokuapp.com?owner=daviddarkins&repo=fslCreateData">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
-</a>
+</a> -->
 
 ## unmanaged package link 
 * Prod https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0O000000Q7pX 
