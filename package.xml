@@ -12,5 +12,18 @@
         <members>CustomLabels</members>
         <name>CustomLabels</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>fslCreateData_Flow</members>
+        <members>fslCreateData_FlowLoop</members>
+        <name>FlowDefinition</name>
+    </types>
+    <types>
+        <members>fslCreateData_sampledata</members>
+        <name>StaticResource</name>
+    </types>
     <version>42.0</version>
 </Package>
