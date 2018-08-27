@@ -12,5 +12,7 @@ Pressing the create button will start a Flow which will create the following
 * The Flow will also make the same data for all the Accounts for Today+1 and Today+2
 * After pressing create you will have 60 Work Orders (each with 3 WOLI and 1 Service Appointment) - 20 Work Orders are created for today, 20 for Today+1 and 20 for Today+2
 
-https://githubsfdeploy.herokuapp.com/?owner=daviddarkinsrepo=fslCreateData - automatic!
-[GitHub](https://githubsfdeploy.herokuapp.com/?owner=daviddarkinsrepo=fslCreateData)
+<a href="https://githubsfdeploy.herokuapp.com?owner=daviddarkins&repo=fslCreateData">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
